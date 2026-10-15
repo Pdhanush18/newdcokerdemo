@@ -12,7 +12,6 @@ import bcrypt
 from jose import JWTError, jwt
 from datetime import datetime, timedelta
 import os
-import httpx
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -26,7 +25,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Next.js dev server
+    allow_origins=["http://localhost:3000", "http://localhost:3001"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
